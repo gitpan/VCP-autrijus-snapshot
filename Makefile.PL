@@ -29,7 +29,7 @@ list at http://maillist.perforce.com/mailman/listinfo/revml/.
 .
 
 my $distname = 'VCP-autrijus-snapshot';
-my $version  = '0.9-20041020';
+my $version  = '0.9-20050110';
 license  ('bsd');
 no_index (directory => 'bin');
 no_index (directory => 'lib');

@@ -1097,7 +1097,9 @@ sub _run3 {
 
       dup2 $saved_fd0, 0 or die "$! restoring STDIN";
       dup2 $saved_fd1, 1 or die "$! restoring STDOUT";
-      dup2 $saved_fd2, 2 or die "$! restoring STDERR";
+      if ( $redirect_stderr ) {
+        dup2 $saved_fd2, 2 or die "$! restoring STDERR";
+      }
       die $x unless defined $r;
    }
    else {
@@ -1111,7 +1113,9 @@ sub _run3 {
          ## In child, phew!
          dup2 $in_fd,  0 or die "$! redirecting STDIN";
          dup2 $out_fd, 1 or die "$! redirecting STDOUT";
-         dup2 $err_fd, 2 or die "$! redirecting STDERR";
+         if ( $redirect_stderr ) {
+           dup2 $err_fd, 2 or die "$! redirecting STDERR";
+         }
          exec @$cmd
             or die "$! execing ", shell_quote( @$cmd );
       }

@@ -1633,7 +1633,7 @@ sub parse_cvs_log_output {
          debug "$state [$foo]";
       }
 
-      if ( /^={50,}$/ ) {
+      if ( /^={77}$/ ) {
          debug "=======" if debugging && debug_parser;
          if ( $h ) {
             $h == $file_data
@@ -1643,7 +1643,7 @@ sub parse_cvs_log_output {
          $saw_equals = 1;
          $h = undef;
       }
-      elsif ( /^-{25,}$/ ) {
+      elsif ( /^-{28}$/ ) {
          debug "-----" if debugging && debug_parser;
          ## There's at least one CVS repository out there with
          ## munged revs that results in a "====" line followed by

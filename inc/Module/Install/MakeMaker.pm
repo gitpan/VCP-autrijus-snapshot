@@ -1,7 +1,4 @@
 #line 1 "inc/Module/Install/MakeMaker.pm - /usr/local/lib/perl5/site_perl/5.8.5/Module/Install/MakeMaker.pm"
-# $File: //depot/cpan/Module-Install/lib/Module/Install/MakeMaker.pm $ $Author: autrijus $
-# $Revision: #11 $ $Change: 1781 $ $DateTime: 2003/10/22 17:14:03 $ vim: expandtab shiftwidth=4
-
 package Module::Install::MakeMaker;
 use Module::Install::Base; @ISA = qw(Module::Install::Base);
 

@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.41.
+signed via the Module::Signature module, version 0.44.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -19,8 +19,8 @@ SHA1 e15c94c08f9ca1bbdc9ab6203796acf579a7991e INSTALL
 SHA1 0e50460d3bb97872d6aafc857eac02ff7875f146 LICENSE
 SHA1 7691af908f638507807d65531fbcdb2ccc5aca7f MANIFEST
 SHA1 63570a5b011bd8b2466b8e96c3ad477029dc3384 MANIFEST.SKIP
-SHA1 13aa8e3d9e65ba0fa16205221b11c9657e004719 META.yml
-SHA1 3b580caecfe495fe1790fc89612b6136875b9f14 Makefile.PL
+SHA1 9cbc008a4a6bb5babe76145107b28522c0f7693e META.yml
+SHA1 ad4592602f92f65dbd13a477864b334fb9fc031f Makefile.PL
 SHA1 343822b26bf98514218d082c6560181667386c02 README
 SHA1 ba9af5051f57ebfe8d619b55399b8ccf431a0afa TODO
 SHA1 119ee890d9b90d838187540fdd0d7589c11dfbed bin/analyze_profile
@@ -36,11 +36,11 @@ SHA1 ae8d860e1498b5f547e3fcb80f856f7771397075 bin/gentrevml
 SHA1 513e69ca9f828e1f075ac04a750c42ce572d62b1 bin/hexdump.pl
 SHA1 354ec9ea44b1d86a4a3396a1e0d050adf2419b02 bin/test_vcp_executable.pl
 SHA1 1117caff3324aa2238158a27de1f62e7ada61faf bin/vcp
-SHA1 02597776ad22aacd2c8e189594fcbf701390b606 inc/Module/Install.pm
-SHA1 7ca8b8f54287c2b5af8062fc9f349275a07e06f3 inc/Module/Install/Base.pm
-SHA1 5ab6b6d786bd7ce10a8a377944d43998a095f4cf inc/Module/Install/MakeMaker.pm
-SHA1 c4ed10cd20914c04f3fff3f8aaf8943372cec114 inc/Module/Install/Makefile.pm
-SHA1 ccf9b6267b5c9e7b35ef129f7e974255955c8867 inc/Module/Install/Metadata.pm
+SHA1 06d883487127fa0026311904e7c4867e850c505c inc/Module/Install.pm
+SHA1 2771d5c5033e94c4789c66a0aad4e21c62985ce9 inc/Module/Install/Base.pm
+SHA1 4b563877c7c084493cc41181852cb50079eeb05e inc/Module/Install/MakeMaker.pm
+SHA1 d8bc0d6e0a82d2b7533bdd3de467593094cc8b2c inc/Module/Install/Makefile.pm
+SHA1 6fca1d05c6b9a8f10865de5be4fefb9bfa7a52e9 inc/Module/Install/Metadata.pm
 SHA1 f395bcf578c1c79d736c252fa4fea5c1c4a3ca0e lib/RevML/Doctype.pm
 SHA1 d8cb3fb1f8d1dc707ed585ba00eed37446a529d3 lib/RevML/Doctype/v0_35.pm
 SHA1 99ac0fc2f67cd1dbaeb49fc965bbb105a4628328 lib/RevML/Writer.pm
@@ -68,7 +68,7 @@ SHA1 66db9044b307ec6136e278f99fd05f8724551f3c lib/VCP/Dest/texttable.pm
 SHA1 d36e4e7e53bff531be24a987fd457726db328804 lib/VCP/Dest/topo_table.pm
 SHA1 741a06fe7d35baa58b4c3407684aca3066abcb01 lib/VCP/Dest/vss.pm
 SHA1 33f30bd697e29ac4ecaeb9c5360d344f79159359 lib/VCP/DiffFormat.pm
-SHA1 41e0e3930025d7217ce90b8326f445eab968fe92 lib/VCP/Driver.pm
+SHA1 b41ace96f7cc6bd2566b003fa73faaa329fa4072 lib/VCP/Driver.pm
 SHA1 7e11ff8e65499abcf694f092eba0cfa88170e511 lib/VCP/FilesDB.pm
 SHA1 0a5a263b7de73a3874cbc995260f1b978dc2da66 lib/VCP/Filter.pm
 SHA1 64946ec42fa5f30b6c950ad76289f9968eaae091 lib/VCP/Filter/addlabels.pm
@@ -97,7 +97,7 @@ SHA1 7282f423801b7eeb553c49ae95f20862001baccb lib/VCP/Rev.pm
 SHA1 b86d5d3396d7d044704c5d7e4c90804a71b10820 lib/VCP/RevMapDB.pm
 SHA1 2e2324a5e063fa156beaffeaa751f1086866b901 lib/VCP/Revs.pm
 SHA1 24766faad65cab96ef9ba3f677dfde09a8895c23 lib/VCP/Source.pm
-SHA1 31e7516e2e73d559b92e2b1747952d732da12f9d lib/VCP/Source/cvs.pm
+SHA1 3c8eb4c2249b545a230949b1ffa557c8831a8391 lib/VCP/Source/cvs.pm
 SHA1 02b1d6be5932764cff3ebec5cc297f2bd5ed9280 lib/VCP/Source/metadb.pm
 SHA1 50c4b0f45a9ac6d7ea9b4236a678b9dd7fac295d lib/VCP/Source/null.pm
 SHA1 9ebc5ae38a90f1c621f82d723ec70263cf68d512 lib/VCP/Source/p4.pm
@@ -191,9 +191,9 @@ SHA1 7f6fba01fea98026d829d8ab9387b0d59a0a477b t/buildpss.ksh,v
 SHA1 490cecbe26db8e28daf327eebbb78aa638219274 t/rcs_file,v
 SHA1 7fe81c9f6bee0b0df0ee1bb6ac3fcd50c1468bbe test_all_p4_versions.sh
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.3 (FreeBSD)
+Version: GnuPG v1.2.6 (FreeBSD)
 
-iD8DBQFBdSYltLPdNzw1AaARAlwAAJ9okoEYxS50+W769arEiL41xWJunQCguL3x
-7qwlGFo10J0a5p6XsaNyniA=
-=7E9K
+iD8DBQFB4nfvtLPdNzw1AaARAuVzAJ9Qjg4Nqek5h1o6ZNWcMRm+4EV9ZwCeLUfE
+F5HgnvpnBBvz1f0FuqYJYoY=
+=bYed
 -----END PGP SIGNATURE-----
