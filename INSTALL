@@ -1,0 +1,25 @@
+VCP Developer System Installation Instructions
+==============================================
+
+These instructions are for developers only, not for end users.  End
+users should use one of the pre-built distributions like "vcp.exe" or
+"vcp-rh8", etc in order to get supported, stable builds.
+
+Before installing VCP, you must install the XML Parsing library "Expat",
+available at:
+
+   http://sourceforge.net/projects/expat/
+
+Installing that allows XML::Parser to install, which allows
+XML::ValidWriter to install, which allows VCP to install.
+
+You will also need a p4d >= 99.2 if you want to use the p4 I/O features,
+since vcp uses the filelog -m option.
+
+VCP is all Perl code, and uses a number of other Perl modules.  Installing
+these is a bit of a pain, but CPAN or PPM can do it for you.  See
+Makefile.PL for what you need.
+
+Note that there are a few "developer only" modules like BFD and
+Text::Table that you may want to install manually if you want to use
+some of the developer-only filters and destinations.

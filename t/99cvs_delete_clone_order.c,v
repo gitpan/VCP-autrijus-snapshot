@@ -1,0 +1,223 @@
+head	1.5;
+access;
+symbols
+	xf-3_3-branch:1.5.0.2
+	xf-3_2Xa:1.5.2.1
+	xf-3_2A-branch:1.5.0.2
+	xf-3_2Aq:1.4
+	xf-3_2Ap:1.4
+	xf-3_2Ao:1.4
+	xf-3_2An:1.4
+	xf-3_2Am:1.4
+	xf-3_2Al:1.4
+	xf-3_2Ak:1.4
+	xf-3_2Aj:1.4
+	xf-3_2Ai:1.4
+	xf-3_2Ah:1.3
+	xf-3_2Ag:1.3
+	xf-3_2Af:1.3
+	xf-3_2Ae:1.3
+	xf-3_2Ad:1.2
+	xf-3_2Ac:1.1
+	xf-3_2Ab:1.1;
+locks; strict;
+comment	@# @;
+
+
+1.5
+date	97.03.24.08.28.46;	author hohndel;	state dead;
+branches
+	1.5.2.1;
+next	1.4;
+
+1.4
+date	97.02.25.14.22.56;	author hohndel;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	97.02.16.10.27.23;	author hohndel;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	97.02.14.12.19.29;	author hohndel;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	97.02.10.16.40.32;	author hohndel;	state Exp;
+branches;
+next	;
+
+1.5.2.1
+date	97.05.03.09.49.14;	author dawes;	state Exp;
+branches;
+next	1.5.2.2;
+
+1.5.2.2
+date	97.05.06.13.28.38;	author dawes;	state dead;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@start removing old drivers
+@
+text
+@XCOMM $XFree86: xc/programs/Xserver/hw/xfree86/vga256/drivers/s3/Imakefile,v 1.4 1997/02/25 14:22:56 hohndel Exp $
+/*
+ *
+ * Copyright 1995-1997 The XFree86 Project, Inc.
+ *
+ */
+
+#define IHaveModules
+#include <Server.tmpl>
+
+SRCS = s3driver.c s3probe.c s3BtCursor.c s3ELSA.c s3ramdacs.c s3init.c  \
+       s3fbinit.c s3save.c s3TiCursor.c Ti3026Curs.c s3misc.c s3accel.c \
+       s3cursor.c IBMRGBCurs.c s3bank.s 
+
+OBJS = s3driver.o s3probe.o s3BtCursor.o s3ELSA.o s3ramdacs.o s3init.o  \
+       s3fbinit.o s3save.o s3TiCursor.o Ti3026Curs.o s3misc.o s3accel.o \
+       s3cursor.o IBMRGBCurs.o s3bank.o 
+
+#if XF86LinkKit
+INCLUDES = -I. -I../../../include -I../../../include/X11 -I../..
+#else
+INCLUDES = -I. -I$(XF86COMSRC) -I$(XF86HWSRC) -I$(XF86OSSRC) \
+           -I../../vga -I$(SERVERSRC)/include \
+           -I$(XINCLUDESRC) -I../../../../../mi \
+	   -I../../../../../../../include/fonts \
+	   -I../../../../../cfb	-I../../../../../mfb 
+#endif
+
+#if MakeHasPosixVariableSubstitutions
+SubdirLibraryRule($(OBJS))
+#endif
+NormalLibraryObjectRule()
+NormalAsmObjectRule()
+
+NormalRelocatableTarget(s3_drv, $(OBJS))
+
+InstallLinkKitNonExecFile(s3driver.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3probe.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3BtCursor.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3ELSA.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3ramdacs.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(Ti3026Curs.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3TiCursor.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3init.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3fbinit.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3save.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3TiCursor.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3misc.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3accel.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3cursor.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(IBMRGBCurs.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3bank.s,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(Imakefile,$(LINKKITDIR)/drivers/vga256/s3)
+
+#if DoLoadableServer
+InstallDynamicModule(s3_drv.o,$(MODULEDIR))
+#endif
+
+DependTarget()
+@
+
+
+1.5.2.1
+log
+@Most changes up to 3.2Ac (ie, pre-loader)
+Patches submitted for the 3.3 branch up to #358 (can't find Harm's cirrus
+    patch though)
+TOG fix-trackers up to #358
+@
+text
+@d1 1
+a1 1
+XCOMM $XFree86$
+d8 1
+d11 7
+a17 3
+SRCS = s3driver.c s3probe.c s3BtCursor.c s3ELSA.c s3ramdacs.c s3init.c s3fbinit.c s3save.c s3TiCursor.c Ti3026Curs.c s3misc.c s3accel.c s3cursor.c IBMRGBCurs.c s3bank.s s3line.c s3seg.c
+
+OBJS = s3driver.o s3probe.o s3BtCursor.o s3ELSA.o s3ramdacs.o s3init.o s3fbinit.o s3save.o s3TiCursor.o Ti3026Curs.o s3misc.o s3accel.o s3cursor.o IBMRGBCurs.o s3bank.o s3line.o s3seg.o
+a51 2
+InstallLinkKitNonExecFile(s3line.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3seg.c,$(LINKKITDIR)/drivers/vga256/s3)
+d54 4
+@
+
+
+1.5.2.2
+log
+@Update the S3 and S3V servers, the compaq driver, SuperProbe and scanpci
+  to the current level.
+Remove the SVGA S3 driver.
+Cirrus driver fixes.
+@
+text
+@d1 1
+a1 1
+XCOMM $XFree86: xc/programs/Xserver/hw/xfree86/vga256/drivers/s3/Imakefile,v 1.5.2.1 1997/05/03 09:49:14 dawes Exp $
+@
+
+
+1.4
+log
+@Add patches 73-82 and 83-87
+Change loader to treat ModuleInit as special function
+Change all modules to use ModuleInit/ServerInit
+Add support for multi element ModulePath
+Add heuristic to find the module based on partial names
+@
+text
+@d1 1
+a1 1
+XCOMM $XFree86: xc/programs/Xserver/hw/xfree86/vga256/drivers/s3/Imakefile,v 1.3 1997/02/16 10:27:23 hohndel Exp $
+@
+
+
+1.3
+log
+@integrated #26,31,32/39,35,38,40,41 and added support for -showunresolved
+@
+text
+@d1 1
+a1 1
+XCOMM $XFree86: xc/programs/Xserver/hw/xfree86/vga256/drivers/s3/Imakefile,v 3.5 1996/12/23 06:58:21 dawes Exp $
+d8 1
+@
+
+
+1.2
+log
+@preparation for XFree86-3.2Ad, includes first cut of the Metro Link loader code
+@
+text
+@d10 3
+a12 1
+SRCS = s3driver.c s3probe.c s3BtCursor.c s3ELSA.c s3ramdacs.c s3init.c s3fbinit.c s3save.c s3TiCursor.c Ti3026Curs.c s3misc.c s3accel.c s3cursor.c IBMRGBCurs.c s3bank.s s3line.c s3seg.c
+d14 3
+a16 1
+OBJS = s3driver.o s3probe.o s3BtCursor.o s3ELSA.o s3ramdacs.o s3init.o s3fbinit.o s3save.o s3TiCursor.o Ti3026Curs.o s3misc.o s3accel.o s3cursor.o IBMRGBCurs.o s3bank.o s3line.o s3seg.o
+a50 2
+InstallLinkKitNonExecFile(s3line.c,$(LINKKITDIR)/drivers/vga256/s3)
+InstallLinkKitNonExecFile(s3seg.c,$(LINKKITDIR)/drivers/vga256/s3)
+@
+
+
+1.1
+log
+@All the patches sent to patch so far, preparing for 3.2Ab
+@
+text
+@d52 4
+@

@@ -1,0 +1,170 @@
+README for vcp - Version CoPy
+
+vcp (and the Perl module VCP.pm) is a system for copying resources under
+version control between repositories. CVS, p4 and VSS repositories are
+currently supported.
+
+vcp can filter, rearrange repositories, and alter metadata during a
+transfer.  These capabilities are used to handle conversion details like
+different branching models and legal character sets between various
+repositories.
+
+
+VCP Status
+----------
+
+This code is in late beta state.  It current supports CVS, Perforce's
+p4, VSS and miscellaneous developer-only sources and destinations.  It
+currently runs on Unix-like and Windows-like platforms.
+
+vcp is known to moderately complex repositories back and forth between
+all sources and destinations like CVS, p4, and VSS and there is a
+third-party Subversion destination driver available (we'd integrate and
+support that, but there needs to be a source driver for balance).
+Please direct all questions and issues to revml@perforce.com if
+possible, or to barries@perforce.com if privacy is required.  Many
+thanks!
+
+VCP does handle branch creation, though not repeated integrations
+between files (a Perforce p4 feature).
+
+
+VSS Issues
+----------
+
+We do expect various issues with VSS source and destination repositories
+due to the, um, freedom that VSS allows its users.  There are ways to
+"paint yourself in to a corner" in VSS using recommended best practices
+like sharing and pinning.
+
+VSS also has also accumulated a large base of anecdotal evidence (see
+google) having to do with corruption and we've found that much
+corruption isn't noticed until VCP is used to try to read every revision
+in a repository.  For best results, run the VSS repair utilities until
+no errors are reported, upgrade to the most recent VSS and re-run the
+repair utilities for the new version (just to be sure).
+
+
+
+COPYRIGHT & LICENSE
+
+Development of this utility is partially funded by Perforce.  All
+software so funded is Copyright 2004, Perforce Software, Inc, and
+licensed according to the file LICENSE distributed with this package.
+
+Contributed portions not assigned to Perforce are Copyright to their
+respective creators.  Such contributed code is clearly marked and
+in the source code.
+
+
+INSTALLATION
+
+For end users, the easiest approach is to use one of the prebuilt
+releases such as "vcp.exe", "vcp-rh8", "vcp-solaris", etc.
+
+Developers should see the INSTALL file for more information.
+
+
+REQUIREMENTS
+
+If you want to use the p4 I/O features, v99.2 or later is required (vcp uses
+the filelog -m option).  Not sure about cvs or VSS versions.
+
+
+THINGS TO READ
+
+The vcp program carries it's own documentation in it.  The main program
+documentation can be read by doing a
+
+   vcp help
+
+or
+
+   perldoc path/to/vcp
+
+.  If you are going source spelunking, a reasonable reading list might
+be:
+
+   bin/vcp
+   VCP
+   VCP::Plugin
+   VCP::Source
+   VCP::Dest
+   VCP::Rev
+   VCP::Revs
+   VCP::Source::*
+   VCP::Dest::*
+   revml.dtd
+   RevML::Doctype
+
+You may browse the source in Perforce's online source repository
+starting at
+
+   http://public.perforce.com/public/index.html
+
+I'll update this file with better links when I get the project checked
+in.
+
+
+SUPPORT
+
+1. Please read the documentation.  It's not as good as it will be, but
+it'll keep you from distracting the author(s) with trivial questions
+when they should be working on debugging and features.
+
+2. Where the documentation is lacking, get us to clarify it.
+
+3. Send all queries, gripes, and kudos to revml@perforce.com .  Please
+feel free to join the list by sending a message to
+
+   revml-subscribe@perforce.com
+
+or by typing & clicking away at
+
+   http://maillist.perforce.com/mailman/listinfo/revml
+
+
+CONTRIBUTING
+
+Lots of work can be done at all levels.  We'd love to have you help!
+
+Some areas we need help in are:
+
+1) Bug fixes, extensions
+
+There are bugs to squash and minor features to add.  You'll know them
+when you trip over them :-).  Feel free to brainstorm on-list.
+
+The recommended way to submit a patch is to use
+
+   diff -Naur old_root/ new_root/
+   
+and send the patch to the list in the body of the message or as a
+plain text (ie non-uuencoded) attachment. PLEASE don't cut and paste
+patches in your GUI, that screws up whitespace and sometimes worse.
+
+Please try to patch the most recent version in the repository, but
+don't feel that you have to.
+
+2) Drivers, drivers, drivers
+
+We really need drivers for lots of other RCSs.  Most notable are SourceSafe,
+SCCS, and bitkeeper.  No drivers that are fairly functional will be
+turned down, though you should ask on-list if anyone's working on one
+so you can combine efforts if possible and avoid duplicated/wasted
+effort.
+
+3) Major features
+
+The most major feature on the TODO list is branching.  It's still on the
+TODO list because it's hard to map between the various branching
+metaphors, or other metaphors (like bitkeeper's LODs) out there.
+
+4) Other uses for RevML
+
+RevML is not just for vcp.  It's a farily generic doctype that should be
+useful for other things.  Feel free to find other uses for it.
+
+Many thanks,
+
+Barrie Slaymaker
