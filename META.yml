@@ -1,6 +1,6 @@
 name: VCP-autrijus-snapshot
 module_name: VCP
-version: 0.9-20041017
+version: 0.9-20041019
 license: bsd
 distribution_type: module
 requires:

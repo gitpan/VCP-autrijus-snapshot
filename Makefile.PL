@@ -29,7 +29,7 @@ list at http://maillist.perforce.com/mailman/listinfo/revml/.
 .
 
 my $distname = 'VCP-autrijus-snapshot';
-my $version  = '0.9-20041017';
+my $version  = '0.9-20041019';
 license  ('bsd');
 no_index (directory => 'bin');
 no_index (directory => 'lib');
@@ -92,6 +92,8 @@ find(
     },
     "lib/VCP",
 );
+
+system($^X, "bin/genhelp", @help_files);
 
 ## Sort and Give .pod files precedence
 {

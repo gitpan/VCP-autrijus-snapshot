@@ -82,6 +82,7 @@ sub {
 
 ) ;
 
+BEGIN { if ((`p4 -V` || '') !~ /Perforce/) { plan tests => 0; exit } }
 plan tests => scalar @tests ;
 
 my $p4d_borken = p4d_borken ;

@@ -49,6 +49,7 @@ sub {
 
 ) ;
 
+BEGIN { if ((`p4 -V` || '') !~ /Perforce/) { plan tests => 0; exit } }
 plan tests => scalar( @tests ) ;
 
 $_->() for @tests ;

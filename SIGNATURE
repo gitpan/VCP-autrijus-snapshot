@@ -18,9 +18,9 @@ SHA1 e78815c6e06759cf1164346a181db220e3cdcdda CHANGES
 SHA1 e15c94c08f9ca1bbdc9ab6203796acf579a7991e INSTALL
 SHA1 0e50460d3bb97872d6aafc857eac02ff7875f146 LICENSE
 SHA1 7691af908f638507807d65531fbcdb2ccc5aca7f MANIFEST
-SHA1 f84195831029a71d1c5e3ff5dc1dbed87fc6c4a9 MANIFEST.SKIP
-SHA1 41de4c693e57239c4cb2efee832d760551577b15 META.yml
-SHA1 5e16b2e3768c87934aa5964be615d1e4929ee9d6 Makefile.PL
+SHA1 63570a5b011bd8b2466b8e96c3ad477029dc3384 MANIFEST.SKIP
+SHA1 b9b41cf63efefa8bc817b111ffe889b454e7ff97 META.yml
+SHA1 d83723a8c7c3e60c9cb8dc336acab011fb02acc4 Makefile.PL
 SHA1 343822b26bf98514218d082c6560181667386c02 README
 SHA1 ba9af5051f57ebfe8d619b55399b8ccf431a0afa TODO
 SHA1 119ee890d9b90d838187540fdd0d7589c11dfbed bin/analyze_profile
@@ -127,7 +127,7 @@ SHA1 0ae0c38555f78e7018ebb8af1b176dc1489970cc t/00revs.t
 SHA1 cbd4fbac25411ae26a75facec29adc5d276f7ba8 t/00uimachines.t
 SHA1 e6ca5cb63b44141f52cbd77526572e9b75baf42a t/00uitext.t
 SHA1 63bd697931705b13d5db57fbe4fba73e0d4973c2 t/00utils_cvs.t
-SHA1 9a81376dc399842f64d75035e65551649edc7bf8 t/00utils_p4.t
+SHA1 5f725aa35ffed777cefd80ac70f3321a2fe47beb t/00utils_p4.t
 SHA1 ce8d96dd5523fbce184ea843e2319e9bbcb2b8d7 t/00vcp_utils.t
 SHA1 1424811a0ad6aaa0fa7785a40feb41692f08cee3 t/01db_file.t
 SHA1 b2d8b7cfa18da8366c684d5941570e93424c48ec t/01db_file_big_records.t
@@ -142,7 +142,7 @@ SHA1 c24fbe22359236bddb0364ec6044f67288e5d5c6 t/03dest_branch_diagram.t
 SHA1 7a7e2b70eba84808efb3b510302c8eab7dc73fa8 t/03dest_cvs.t
 SHA1 28e8c1abc963a73d513170b0311f00e47c89c0a4 t/03dest_metadb.t
 SHA1 cdda9a65bf2d87766a94cbe77cb589dd0308bc47 t/03dest_null.t
-SHA1 17a712cc916ad203f24357ce300abcbdd937ce7a t/03dest_p4.t
+SHA1 e34044ab536331cd1ce9bea16f76c8e86788e8cb t/03dest_p4.t
 SHA1 fb99f8d0217e00033764df5dcf1df1521657a26d t/03dest_perl_data.t
 SHA1 4566d016bd4fb3385f2bb4a1c165e58dc8b18a4c t/03dest_revml.t
 SHA1 736d42fee43adf3382556e33f5b0172f2e1fb081 t/03dest_topo_table.t
@@ -186,14 +186,14 @@ SHA1 1f7f7b750a2d3153b9c9ea3ab9fb3abb85ccca28 t/95vss2p4.t
 SHA1 611b482dc91701655ee99df655c76d0968ac4ff5 t/99cvs_delete_clone_order.c,v
 SHA1 79f45fd6b0c2b18295fc1e3919e590eac100e63e t/99cvs_delete_clone_order.t
 SHA1 177ae111d05c21e7ee56ae50055483485e036ea1 t/99p4_integrate_back.t
-SHA1 d599b0dc466c89d0958cdb7bcd2957134347bfdc t/99p4_label_branch_rev_1.t
+SHA1 6eba5db1d6777bd4e39f5e9c3b816e63608cfa65 t/99p4_label_branch_rev_1.t
 SHA1 7f6fba01fea98026d829d8ab9387b0d59a0a477b t/buildpss.ksh,v
 SHA1 490cecbe26db8e28daf327eebbb78aa638219274 t/rcs_file,v
 SHA1 7fe81c9f6bee0b0df0ee1bb6ac3fcd50c1468bbe test_all_p4_versions.sh
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.2.3 (FreeBSD)
 
-iD8DBQFBceEstLPdNzw1AaARAiQ7AJ0aKi6hL9u9P+mu5L6VrMjqTsGrQgCePwEf
-KPsqAknr9jPky72lAY3vOIo=
-=uAWg
+iD8DBQFBdRswtLPdNzw1AaARAtHZAKCXxu0/TvptXkhrQieOFm8QobSJMQCeLjxh
+tDJKZ/cRG8G1EVA7/nNNyPI=
+=1tiW
 -----END PGP SIGNATURE-----
