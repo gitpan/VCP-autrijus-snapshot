@@ -101,8 +101,6 @@ sub DESTROY {
 }
 
 
-=back
-
 =head1 SUBCLASSING
 
 This class is a bless scalar.

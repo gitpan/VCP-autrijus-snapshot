@@ -29,7 +29,7 @@ list at http://maillist.perforce.com/mailman/listinfo/revml/.
 .
 
 my $distname = 'VCP-autrijus-snapshot';
-my $version  = '0.9-20041019';
+my $version  = '0.9-20041020';
 license  ('bsd');
 no_index (directory => 'bin');
 no_index (directory => 'lib');
@@ -92,8 +92,6 @@ find(
     },
     "lib/VCP",
 );
-
-system($^X, "bin/genhelp", @help_files);
 
 ## Sort and Give .pod files precedence
 {
@@ -195,6 +193,7 @@ WriteMakefile(
 if ( -e "lib/VCP/Help.pm" ) {
    ## This so that nmake lib/VCP/Help.pm will remake it.
    unlink "lib/VCP/Help.pm" or warn "$!:lib/VCP/Help.pm";
+   system($^X, "bin/genhelp", @help_files);
 }
 
 sub MY::libscan {
